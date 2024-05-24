@@ -1,0 +1,20 @@
+{% extends "base/layout.html" %}
+
+{% block title %}
+	Sozlerdeki herif sayi
+{% endblock title %}
+
+{% block content %}
+
+<h1>Cumledeki sozlerin sayi</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="test_str">Cumleni elave edin:</label>
+        <input type="text" id="test_str" name="test_str">
+        <button type="submit">Submit</button>
+    </form>
+    {% if result is not None %}
+        <p>Cumledeki sozlerin sayi: {{ result }}</p>
+    {% endif %}
+
+    {% endblock content %}

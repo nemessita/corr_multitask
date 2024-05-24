@@ -1,0 +1,33 @@
+{% extends "base/layout.html" %}
+{% load static %}
+
+{% block title %}
+	Exchange page
+{% endblock title %}
+
+{% block content %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <select name="currency_from">
+            <option value="azn">AZN</option>
+            <option value="usd">USD</option>
+            <option value="eur">EUR</option>
+        </select>
+    
+        <select name="currency_to">
+            <option value="azn">AZN</option>
+            <option value="usd">USD</option>
+            <option value="eur">EUR</option>
+        </select>
+    
+        <input type="text" id="myInput" placeholder="Enter amount..." name="amount">
+        <button type="submit">Exchange</button>
+    </form>
+    
+
+ <h1>
+    {{currency_from}} {{currency_to}}   {{exchanged_amount}}
+</h1>
+    
+{% endblock %}

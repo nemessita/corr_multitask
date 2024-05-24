@@ -1,0 +1,21 @@
+{% extends "base/layout.html" %}
+
+{% block title %}
+	Sozlerdeki herif sayi
+{% endblock title %}
+
+
+{% block content %}
+    <h1>Enter a String</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="test_str">Sozu elave edin:</label>
+        <input type="text" id="test_str" name="test_str" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    {% if test_str %}
+        <p>Elave ediyiniz soz : {{ test_str }}</p>
+        <p>Elave edilmis sozdeki heriflerin sayi : {{ result }}</p>
+    {% endif %}
+{% endblock content %}
